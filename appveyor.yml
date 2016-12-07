@@ -38,3 +38,4 @@ test_script:
 
 on_success:
   - if defined COVERALLS_TOKEN goveralls -coverprofile=%TARGET%.cover -service=
+  - bash <(curl -s https://codecov.io/bash)

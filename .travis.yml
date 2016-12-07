@@ -30,3 +30,4 @@ script:
 
 after_success:
   - goveralls -coverprofile=$TARGET.cover
+  - bash <(curl -s https://codecov.io/bash)
