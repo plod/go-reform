@@ -77,5 +77,6 @@ mssql: test
 	sqlcmd -b -I -S "$(REFORM_SQL_INSTANCE)" -d "reform-test" -i internal/test/sql/mssql_data.sql
 	sqlcmd -b -I -S "$(REFORM_SQL_INSTANCE)" -d "reform-test" -i internal/test/sql/mssql_set.sql
 	go test -coverprofile=mssql.cover
+	go test -tags=bench -v -run=Benchmark -bench=Benchmark
 
 .PHONY: parse reform
